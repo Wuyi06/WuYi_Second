@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSDN_专业开发者社区</title>
+    <link rel="icon" href="./images/csdn博客.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 登录注册框 -->
+    <div class="auth-container" id="auth-container">
+        <span class="close-btn" id="close-btn">×</span>
+        <div class="auth-toggle">
+            <button id="login-btn" class="active">登录</button>
+            <button id="register-btn">注册</button>
+        </div>
+        <form id="login-form" class="auth-form active">
+            <h2>登录</h2>
+            <input type="text" id="login-username" name="username" placeholder="用户名" required />
+            <input type="password" id="login-password" name="password" placeholder="密码" required />
+            <button type="button" id="login-submit">登录</button>
+        </form>
+        <form id="register-form" class="auth-form">
+            <h2>注册</h2>
+            <input type="text" id="register-username" name="username" placeholder="用户名" required />
+            <input type="email" id="register-email" name="email" placeholder="邮箱" required />
+            <input type="password" id="register-password" name="password" placeholder="密码" required />
+            <input type="password" id="register-confirm-password" name="confirm-password" placeholder="确认密码" required />
+            <button type="button" id="register-submit">注册</button>
+        </form>
+        <div class="agreement">
+            <input type="checkbox" id="agreement-checkbox" required />
+            <label for="agreement-checkbox">
+                注册登录即表示同意 <a href="#">《服务条款》</a> 和 <a href="#">《隐私协议》</a>
+            </label>
+        </div>
+    </div>
+    <!-- 主页开始 -->
+    <div class="mainweb">
+        <!-- 顶部导航搜索栏开始 -->
+        <div class="header">
+            <div class="menulogo">
+                <img src="./images/mulu.png" alt="">
+            </div>
+            <div class="logo">
+                <img src="./images/csdnlogo.png">
+            </div>
+            <div class="search-bar">
+                <img src="./images/火苗.png" alt="">
+                <input type="text" placeholder=" 搜索..." id="mainsousuoinput">
+                <button type="submit" id="mainwebsousuo">搜索</button>
+                <button id="czhidao">C 知道</button>
+            </div>
+            <div id="logomonkey" class="headerright">
+                <!-- <img src="./images/logomonkey.jpg!1" alt=""> -->
+                登录
+            </div>
+            <div class="headerright" id="righthuiyuan">
+                <span>会员中心</span>
+            </div>
+            <div class="headerright" id="rightxiaoxi">
+                <span>消息</span>
+            </div>
+            <div class="headerright" id="rightchuangzuo">
+                <div>十 创作</div>
+            </div>
+        </div>
+        <!-- 顶部导航搜索栏结束 -->
+
+        <!-- 文章分类目录开始 -->
+        <div class="topmenu">
+            <span id="topmenuitem1">全部</span>
+            <span id="topmenuitem2">前端</span>
+            <span id="topmenuitem3">后端</span>
+            <span id="topmenuitem4">移动开发</span>
+            <span id="topmenuitem5">编程语言</span>
+            <span id="topmenuitem6">Java</span>
+            <span id="topmenuitem7">Python</span>
+        </div>
+        <!-- 文章分类目录结束 -->
+
+        <!-- 侧边栏开始 -->
+        <div class="leftmenu-container">
+            <ul class="leftmenu">
+                <li id="leftmenuitem1">
+                    <img src="./images/首页.png" alt="">
+                    <p>首页</p>
+                </li>
+                <li>
+                    <img src="./images/博客.png" alt="">
+                    <p>博客</span>
+                </li>
+                <li>
+                    <img src="./images/下载.png" alt="">
+                    <p>下载</p>
+                </li>
+                <li>
+                    <img src="./images/学习.png" alt="">
+                    <p>学习</p>
+                </li>
+                <li>
+                    <img src="./images/讨论.png" alt="">
+                    <p>社区</p>
+                </li>
+                <li>
+                    <img src="./images/C知道.png" alt="">
+                    <p>C知道</p>
+                </li>
+                <li>
+                    <img src="./images/Gitcode.png" alt="">
+                    <p>GitCode</p>
+                </li>
+                <li>
+                    <img src="./images/inscodeai.png" alt="">
+                    <p>InsCodeAI</p>
+                </li>
+                <li>
+                    <img src="./images/技术会议.png" alt="">
+                    <p>技术会议</p>
+                </li>
+                <li>
+                    <img src="./images/订阅.png" alt="">
+                    <p>订阅</p>
+                </li>
+                <li>
+                    <img src="./images/关注.png" alt="">
+                    <p>关注</p>
+                </li>
+                <li>
+                    <img src="./images/收藏.png" alt="">
+                    <p>收藏</p>
+                </li>
+                <li>
+                    <img src="./images/历史.png" alt="">
+                    <p>历史</p>
+                </li>
+                <li>
+                    <img src="./images/会员中心.png" alt="">
+                    <p>会员中心</p>
+                </li>
+                <li>
+                    <img src="./images/创作中心.png" alt="">
+                    <p>创作中心</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 侧边栏结束 -->
+
+        <!-- 首页内容开始 -->
+
+        <!-- 咨询头条 -->
+        <div class="news-container">
+            <div>
+                <span id="theme1"><strong>资讯头条</strong></span>
+                <span id="theme1to">更多资讯 ></span>
+            </div>
+            <div class="news-img">
+                <div class="news-item"
+                    style="background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)),url('./images/newsimg1.png');">
+                    <span>101万元!天工Ultra半马冠军原型机被拍卖;GPT-4o更新后过于谄媚,现已回滚旧版;腾讯重构混元大模型研发体系| 极客头条</span>
+                </div>
+                <div class="news-item"
+                    style="background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)), url('./images/newsimg2.png');">
+                    <span>“把BUG当特性,真是见鬼了!”Linux之父痛斥文件系统「大小写不敏感」:这是天大的错误</span>
+                </div>
+                <div class="news-item"
+                    style="background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)), url('./images/newsimg3.jpeg');">
+                    <span>微软放弃“一锤子买卖”,前员工揭秘Windows 10免费升级背后的真相!</span>
+                </div>
+                <div class="news-item"
+                    style="background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)), url('./images/newsimg4.jpeg');">
+                    <span>从零开始重建Kafka,会是什么样?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-container2">
+            <span id="newstext1">
+                <ul class="news-text2">
+                    <li>•雷军回应小米手机重回中国市场第一；GPT-4o出现“谄媚烦人”倾向；华为联合11家汽车品牌发布智能辅助驾驶安全倡议 | 极客头条</li>
+                    <li>•曝Manus获7500万美元融资，估值飙升至5亿美元！</li>
+                    <li>•35岁脑干出血程序员发声：我是前车之鉴，大家累了就歇一歇；雅虎也欲竞购Chrome；陈立武启动「重塑英特尔」计划 | 极客头条</li>
+                </ul>
+            </span>
+            <span id="newstext2">
+                <ul class="news-text2">
+                    <li>•智能时代新底座：操作系统如何承载AI技术跃迁</li>
+                    <li>•“血亏！我花3000+元用Claude做游戏，结果还不如去「白嫖」Gemini 2.5……”</li>
+                    <li>•“Rust真能防住C代码里的那些老问题吗？我们做了个实验验证”</li>
+                </ul>
+            </span>
+        </div>
+        <!-- 精选博客 -->
+        <div class="selected-blogs">
+            <div id="jingxuanblogs">
+                <span id="theme2"><strong>精选博客</strong></span>
+                <span id="theme2to">排行榜</span>
+            </div>
+            <div id="selected-blogslist">
+
+            </div>
+        </div>
+
+        <!-- 右边内容 -->
+        <div class="rightcontainer">
+            <div class="ad">
+            </div>
+            <div class="livestream">
+                <div>
+                    <span id="righttheme1"><strong>直播</strong></span>
+                    <span id="righttheme1to">更多 ></span>
+                </div>
+                <div class="livestreaming">
+                    <img src="./images/播放.png" alt="">
+                    <div class="livestreamingtext">GitTalk：【ModelEngine】<strong> 大模型开发全流程工具链深度解析</strong></div>
+                    <div class="redu">热度：666</div>
+                </div>
+                <div class="livestreaming">
+                    <img src="./images/播放.png" alt="">
+                    <div class="livestreamingtext"><strong>仓颉编程语言</strong>WORKSHOP</div>
+                    <div class="redu">热度：666</div>
+                </div>
+                <div class="livestreaming">
+                    <img src="./images/播放.png" alt="">
+                    <div class="livestreamingtext"><strong> 从小工具到小游戏 解锁开发新姿势</strong></div>
+                    <div class="redu">热度：666</div>
+                </div>
+                <div class="livestreaming">
+                    <img src="./images/播放.png" alt="">
+                    <div class="livestreamingtext">GitTalk：ModelEngine <strong>深度解析</strong></div>
+                    <div class="redu">热度：666</div>
+                </div>
+            </div>
+            <div class="activities">
+                <div>
+                    <span id="righttheme2"><strong> 活动日历</strong></span>
+                    <span id="righttheme2to">更多 ></span>
+                </div>
+                <div class="acdate">
+                    <div class="activitiesdate">
+                        <span>
+                            <big><strong>07</strong></big> <br> <small>5月</small>
+                        </span>
+                        <div>CSDN 智研社走进巴黎：共话 AI 时代的技术变革与机遇</div>
+                        <button class="xianxia">线下</button>
+                    </div>
+                    <div class="activitiesdate">
+                        <span>
+                            <big><strong>24</strong></big> <br> <small>4月</small>
+                        </span>
+                        <div>Tuya AI硬件开发平台开源啦！个人开发者DIY教学</div>
+                        <button class="xianshang">线上</button>
+                    </div>
+                    <div class="activitiesdate">
+                        <span>
+                            <big><strong>13</strong></big> <br> <small>5月</small>
+                        </span>
+                        <div>2025 高通边缘智能应用创新大赛系列公开课一</div>
+                        <button class="xianshang">线上</button>
+                    </div>
+                    <div class="activitiesdate">
+                        <span>
+                            <big><strong>15</strong></big> <br> <small>5月</small>
+                        </span>
+                        <div>2025 高通边缘智能应用创新大赛系列公开课二</div>
+                        <button class="xianshang">线上</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 用户下拉框 -->
+        <div class="yonghuxialakuang">
+            <div class="yonghuxialakuang-touxiang">
+                <div class="yonghuxialakuang-touxiangimg"><img src="./images/logomonkey.jpg!1" alt=""></div>
+                <div class="yonghuxialakuang-touxiangname">CAT_666</div>
+            </div>
+            <div class="yonghuxialakuang-information">
+                <span>0 <br>粉丝</span>
+                <span>0 <br>关注</span>
+                <span>0 <br>获赞</span>
+            </div>
+            <ul>
+                <li id="wodezhuye1"><img src="" alt="">我的主页</li>
+                <li><img src="" alt="">创作中心</li>
+                <li><img src="" alt="">会员中心</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">已购内容</li>
+                <li><img src="" alt="">我的订单</li>
+                <li><img src="" alt="">我的钱包</li>
+                <li><img src="" alt="">我的等级</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">我的设置</li>
+            </ul>
+            <ul>
+                <li id="tuichudenglu1"><img src="" alt="">退出</li>
+            </ul>
+        </div>
+        <!-- 首页内容结束 -->
+    </div>
+    <!-- 主页结束 -->
+
+
+    <!-- 搜索页面开始 -->
+    <div class="searchweb">
+        <!-- 顶部导航搜索栏开始 -->
+        <div class="searchheader">
+            <div class="searchlogo">
+                <img src="./images/csdnlogo.png">
+            </div>
+            <div class="searchmenu">
+                <span class="searchmenuitems">博客</span>
+                <span class="searchmenuitems">下载</span>
+                <span class="searchmenuitems">学习</span>
+                <span class="searchmenuitems">社区</span>
+                <span class="searchmenuitems">GitCode</span>
+                <span class="searchmenuitems">InsCodeAI</span>
+                <span class="searchmenuitems">会议</span>
+            </div>
+            <div id="searchlogomonkey" class="searchheaderright">
+                <img src="./images/logomonkey.jpg!1" alt="">
+            </div>
+            <div class="searchheaderright" id="searchrighthuiyuan">
+                <span>会员中心</span>
+            </div>
+            <div class="searchheaderright" id="searchrightxiaoxi">
+                <span>消息</span>
+            </div>
+            <div class="searchheaderright" id="searchrightlishi">
+                <span>历史</span>
+            </div>
+            <div class="searchheaderright" id="searchrightchuangzuozhonxin">
+                <span>创作中心</span>
+            </div>
+            <div class="searchheaderright" id="searchrightchuangzuo">
+                <div>十 创作</div>
+            </div>
+        </div>
+
+        <div class="searchheader-input">
+            <input type="text" placeholder="搜索">
+            <button>C 一下</button>
+        </div>
+        <!-- 顶部导航搜索栏结束 -->
+        <div class="searchcontent">
+            <div class="searchnav">
+                <span>全站</span>
+                <span>C知道</span>
+                <span>博客</span>
+                <span>下载</span>
+                <span>课程</span>
+                <span>用户</span>
+                <span>专栏</span>
+                <span>更多</span>
+                <div class="searchnav2">
+                    <span>综合</span>
+                    <span>最新</span>
+                    <span>热门</span>
+                    <span>VIP内容</span>
+                </div>
+                <div class="searchblogs">
+
+                </div>
+                <div class="searchrightbox">
+                    <div class="searchrightbox1">
+                        <img src="./images/1.jpg" alt="">
+                    </div>
+                    <div class="searchrightbox2">
+                        <img src="./images/2.jpg" alt="">
+                    </div>
+                    <div class="searchrightbox3">
+                        <img src="./images/3.jpg" alt="">
+                    </div>
+                    <div class="searchrightbox4">
+                        <img src="./images/4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索页面结束 -->
+
+
+    <!-- 写文章页面开始 -->
+    <div class="writeweb">
+        <div class="writeheader">
+            <div class="writeheaderleft">
+                <img src="./images/logo-dIbdY6cU.png" alt="">
+                <span>
+                    < </span>
+                        <span>发布文章</span>
+            </div>
+            <div id="writelogomonkey" class="writeheaderright">
+                <img src="./images/logomonkey.jpg!1" alt="">
+            </div>
+            <div id="writerightxiaoxi" class="writeheaderright">
+                <span>消息</span>
+            </div>
+            <div class="writeheader2">
+                <span>撤销</span>
+                <span>重做</span>
+                <span>历史</span>
+                <span>格式</span>
+                <span>加粗</span>
+                <span>颜色</span>
+                <span>背景</span>
+                <span>列表</span>
+                <span>对齐</span>
+                <span>水平线</span>
+                <span>代码</span>
+                <span>资源绑定</span>
+                <span>表格</span>
+                <span>图像</span>
+                <span>视频</span>
+                <span>公式</span>
+                <span>链接</span>
+                <span>模板</span>
+                <span>目录</span>
+                <span>投票</span>
+                <span>宽屏</span>
+            </div>
+        </div>
+        <div class="writeyonghuxialakuang">
+            <div class="writeyonghuxialakuang-touxiang">
+                <div class="writeyonghuxialakuang-touxiangimg"><img src="./images/logomonkey.jpg!1" alt=""></div>
+                <div class="writeyonghuxialakuang-touxiangname">CAT_666</div>
+            </div>
+            <div class="writeyonghuxialakuang-information">
+                <span>0 <br>粉丝</span>
+                <span>0 <br>关注</span>
+                <span>0 <br>获赞</span>
+            </div>
+            <ul>
+                <li id="wodezhuye2"><img src="" alt="">我的主页</li>
+                <li><img src="" alt="">创作中心</li>
+                <li><img src="" alt="">会员中心</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">已购内容</li>
+                <li><img src="" alt="">我的订单</li>
+                <li><img src="" alt="">我的钱包</li>
+                <li><img src="" alt="">我的等级</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">我的设置</li>
+            </ul>
+            <ul>
+                <li id="tuichudenglu2"><img src="" alt="">退出</li>
+            </ul>
+        </div>
+        <div class="writebottom">
+            <span class="baocundingshi">保存草稿</span>
+            <span class="baocundingshi">定时发布></span>
+            <span id="fabuboke">发布博客</span>
+        </div>
+        <div class="writeinput">
+            <div class="writeinput-text">
+                <textarea name="" id="writetitle" placeholder="请输入文章标题（5~100个字）"></textarea>
+                <textarea name="" id="writecontent" placeholder="请输入文章正文"></textarea>
+            </div>
+            <div class="writeinput-select">
+                <ul>
+                    <li>
+                        <div class="writeselectitems">文章标签</div>
+                        <div class="selecttianjia">
+                            + 添加文章标签
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">添加封面</div>
+                        <div class="writeimg">
+                            +<br>
+                            从本地上传
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">文章摘要</div>
+                        <div>
+                            <textarea name="" id="writezhaiyao" placeholder="请输入文章摘要"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">分类专栏</div>
+                        <div class="selecttianjia">
+                            +新建分类专栏
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">文章类型</div>
+                        <div>
+                            <input type="radio" id="option1" name="writeleixing" value="1" checked><label
+                                for="option1">原创</label>
+                            <input type="radio" id="option2" name="writeleixing" value="2"><label
+                                for="option2">转载</label>
+                            <input type="radio" id="option3" name="writeleixing" value="3"><label
+                                for="option3">翻译</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">文章备份</div>
+                        <div>
+                            <input type="checkbox">
+                            同时备份到GitCode
+                        </div>
+                    </li>
+                    <li>
+                        <div class="writeselectitems">可见范围</div>
+                        <div>
+                            <input type="radio" id="fanwei1" name="writekejianfanwei" checked><label
+                                for="fanwei1">全部可见</label>
+                            <input type="radio" id="fanwei2" name="writekejianfanwei"><label for="fanwei2">仅我可见</label>
+                            <input type="radio" id="fanwei3" name="writekejianfanwei"><label for="fanwei3">粉丝可见</label>
+                            <input type="radio" id="fanwei4" name="writekejianfanwei"><label
+                                for="fanwei43">VIP可见</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 写文章页面结束 -->
+
+
+    <!-- 文章详情内容页面开始 -->
+    <div class="blogweb">
+        <!-- 顶部导航搜索栏 -->
+        <div class="blogheader">
+            <div class="bloglogo">
+                <img src="./images/csdnlogo.png">
+            </div>
+            <div class="blogmenu">
+                <span>博客</span>
+                <span>下载</span>
+                <span>学习</span>
+                <span>社区</span>
+                <span>GitCode</span>
+                <span>InsCodeAI</span>
+                <span>会议</span>
+            </div>
+            <div class="blogheadermiddle">
+                <input type="text" id="blogsousuoinput">
+                <button id="blogsousuo">搜索</button>
+                <button id="blogczhidao">C 知道</button>
+            </div>
+            <div id="bloglogomonkey" class="blogheaderright">
+                <img src="./images/logomonkey.jpg!1" alt="">
+            </div>
+            <div class="blogheaderright" id="blogrighthuiyuan">
+                <span>会员中心</span>
+            </div>
+            <div class="blogheaderright" id="blogrightxiaoxi">
+                <span>消息</span>
+            </div>
+            <div class="blogheaderright" id="blogrightlishi">
+                <span>历史</span>
+            </div>
+            <div class="blogheaderright" id="blogrightchuangzuozhonxin">
+                <span>创作中心</span>
+            </div>
+            <div class="blogheaderright" id="blogrightchuangzuo">
+                <div>十 创作</div>
+            </div>
+        </div>
+        <!-- 主要内容 -->
+        <div class="blogcontent">
+            <div class="blogleftcontent">
+                <div class="blogleftcontentyonghu">
+                    <div class="blogtouxiang">
+                        <div class="blogtouxiangimg"><img src="./images/logomonkey.jpg!1" alt=""></div>
+                        <div class="blogtouxiangname">
+                            <div>CAT_666</div>
+                            <p>博客等级</p>
+                            <span>码龄1年</span>
+                        </div>
+                    </div>
+                    <div class="blogxingxi">
+                        <span>
+                            <p>666</p>
+                            <p>原创</p>
+                        </span>
+                        <span>
+                            <p>8888</p>
+                            <p>点赞</p>
+                        </span>
+                        <span>
+                            <p>1688</p>
+                            <p>收藏</p>
+                        </span>
+                        <span>
+                            <p>1888</p>
+                            <p>粉丝</p>
+                        </span>
+                    </div>
+                    <div class="bloganniu">
+                        <button id="button1">关注</button>
+                        <button id="button2">私信</button>
+                    </div>
+                </div>
+                <div class="blog-hotblogs">
+                    <div class="blog-hotblogstheme">热门文章</div>
+                    <div class="blog-hotblogitems">前端性能优化的最佳实践</div>
+                    <div class="blog-hotblogitems">前端框架的对比与选择</div>
+                    <div class="blog-hotblogitems">前端开发中的响应式设计</div>
+                    <div class="blog-hotblogitems">前端开发中的状态管理</div>
+                    <div class="blog-hotblogitems">前端开发中的组件化设计</div>
+                </div>
+                <div class="jingtai5"><img src="./images/5.jpg" alt=""></div>
+            </div>
+            <div class="blogtextcontent">
+                <h1 class="blogtitle"></h1>
+                <div class="blogmetadata">
+                    <span class="blogtype"></span>
+                    <span class="blogtime"></span>
+                </div>
+                <div class="blogsummary">
+                    <h3>文章摘要</h3>
+                    <p></p>
+                </div>
+                <div class="blogmaintext">
+                    <h3>文章内容</h3>
+                    <p></p>
+                </div>
+                <div class="blogstats">
+                    <span>阅读量：<span class="blogviewed"></span></span>
+                    <span>点赞：<span class="blogliked"></span></span>
+                    <span>踩：<span class="blogdisliked"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 文章详情内容页面结束 -->
+
+    <!-- 用户个人主页开始 -->
+    <div class="userweb">
+        <!-- 顶部导航搜索栏 -->
+        <div class="userheader">
+            <div class="userlogo">
+                <img src="./images/csdnlogo.png">
+            </div>
+            <div class="usermenu">
+                <span>博客</span>
+                <span>下载</span>
+                <span>学习</span>
+                <span>社区</span>
+                <span>GitCode</span>
+                <span>InsCodeAI</span>
+                <span>会议</span>
+            </div>
+            <div class="userheadermiddle">
+                <input type="text" id="usersousuoinput">
+                <button id="userwebsousuo">搜索</button>
+                <button id="userczhidao">C 知道</button>
+            </div>
+            <div id="userlogomonkey" class="userheaderright">
+                <img src="./images/logomonkey.jpg!1" alt="">
+            </div>
+            <div class="userheaderright" id="userrighthuiyuan">
+                <span>会员中心</span>
+            </div>
+            <div class="userheaderright" id="userrightxiaoxi">
+                <span>消息</span>
+            </div>
+            <div class="userheaderright" id="userrightlishi">
+                <span>历史</span>
+            </div>
+            <div class="userheaderright" id="userrightchuangzuozhonxin">
+                <span>创作中心</span>
+            </div>
+            <div class="userheaderright" id="userrightchuangzuo">
+                <div>十 创作</div>
+            </div>
+        </div>
+        <div class="useryonghuxialakuang">
+            <div class="useryonghuxialakuang-touxiang">
+                <div class="useryonghuxialakuang-touxiangimg"><img src="./images/logomonkey.jpg!1" alt=""></div>
+                <div class="useryonghuxialakuang-touxiangname">CAT_666</div>
+            </div>
+            <div class="useryonghuxialakuang-information">
+                <span>0 <br>粉丝</span>
+                <span>0 <br>关注</span>
+                <span>0 <br>获赞</span>
+            </div>
+            <ul>
+                <li id="wodezhuye3"><img src="" alt="">我的主页</li>
+                <li><img src="" alt="">创作中心</li>
+                <li><img src="" alt="">会员中心</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">已购内容</li>
+                <li><img src="" alt="">我的订单</li>
+                <li><img src="" alt="">我的钱包</li>
+                <li><img src="" alt="">我的等级</li>
+            </ul>
+            <ul>
+                <li><img src="" alt="">我的设置</li>
+            </ul>
+            <ul>
+                <li id="tuichudenglu3"><img src="" alt="">退出</li>
+            </ul>
+        </div>
+        <div class="usercontent">
+            <div class="userheadinformation">
+                <div class="userheadimg">
+                    <img src="./images/logomonkey.jpg!1" alt="">
+                </div>
+                <div class="username">
+                    <div>CAT_666</div>
+                    <span id="userbianjiziliao"><img src="./images/编辑资料.png" alt="">编辑资料</span>
+                    <span> <img src="./images/设置.png" alt="">设置</span>
+                    <span><img src="./images/管理博文.png" alt="">管理博文</span>
+                </div>
+                <div class="userheadinformation1">
+                    <span><strong>暂无</strong> 原创</span>
+                    <span><strong>暂无</strong> 排名</span>
+                    <span><strong>0</strong> 粉丝</span>
+                    <span><strong>0</strong> 铁粉</span>
+                </div>
+                <div class="userid">
+                    <div>IP 属地：
+                        广东省</div>
+                    <div>加入CSDN时间：
+                        2025-5-7</div>
+                    <div>博客简介：
+                        CAT_666的博客</div>
+                </div>
+            </div>
+            <div class="userleftinformation">
+                <div class="userdengji">
+                    <div>原力等级</div>
+                    <span>当前等级<p>0</p></span>
+                    <span>当前总分<p>0</p></span>
+                    <span>当月<p>0</p></span>
+                </div>
+                <div class="userachievement">
+                    <div>个人成就</div>
+                    <span><img src="./images/获得点赞.png" alt="">获得 0 次点赞</span><br>
+                    <span><img src="./images/获得评论.png" alt="">内容获得 0 次评论</span><br>
+                    <span><img src="./images/获得收藏.png" alt="">获得 0 次收藏</span><br>
+                </div>
+            </div>
+            <div class="userrightinformation">
+                <div class="userrightinformation-topmenu">
+                    <span>最近</span>
+                    <span>文章</span>
+                    <span>代码仓</span>
+                    <span>资源</span>
+                    <span>问答</span>
+                    <span>帖子</span>
+                    <span>视频</span>
+                    <span>课程</span>
+                    <span>关注/订阅/互动</span>
+                    <span>收藏</span>
+                    <button>搜TA的内容 <img src="./images/放大镜.png" alt=""></button>
+                </div>
+                <div class="userrightinformation-maincontent">
+                    <div id="my-blogslist">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 用户资料编辑 -->
+        <div id="userprofileediting">
+            <div id="userprofileediting-container">
+                <div class="userprofileediting-leftmenu">
+                    <div id="userprofileeditingitem1">个人资料</div>
+                    <div id="userprofileeditingitem2">账号设置</div>
+                    <div>我的代码仓</div>
+                    <div>隐私设置</div>
+                    <div>信息认证</div>
+                    <div>我的收藏</div>
+                    <div id="userprofileeditingitem3">浏览历史</div>
+                    <div>内容管理 ></div>
+                    <div>学习计划管理 ></div>
+                </div>
+                <div class="userprofileediting-rightcontent1">
+                    <div class="usergeneral-info-t">
+                        <div class="usergeneral-info-avatar">
+                            <img src="./images/logomonkey.jpg!1" alt="">
+                        </div>
+                        <div class="general-info-t-info">
+                            <div><big><strong>CAT_666</strong></big></div>
+                            <div>你还没有获得勋章，完成任务即可点亮哦～ <big> ></big></div>
+                            <img src="./images/开通会员.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="useryue">
+                        <span class="userwodeyue">我的余额</span>
+                        <span>0</span>
+                        <span id="useryuechongzhi">去充值</span>
+                        <span id="shu">|</span>
+                        <span id="useryueto">个人主页 <big> ></big></span>
+                    </div>
+                    <div class="userbasic-information">
+                        <div class="userbasic-informationtheme">基本信息</div>
+                        <span class="userchangeinformation">修改信息</span>
+                        <div class="userbasic-informationcontainer">
+                            <form action="">
+                                <ul class="userbasic-informationcontentlist">
+                                    <li>
+                                        <div class="userbasic-informationname">用户昵称</div>
+                                        <input type="text" id="userbasic-information-username"
+                                            class="userbasic-informationcontent" placeholder="用户昵称" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">用户 ID</div>
+                                        <input type="text" id="userbasic-information-user-id"
+                                            class="userbasic-informationcontent" placeholder="用户 ID" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">性 别</div>
+                                        <input type="text" id="userbasic-information-gender"
+                                            class="userbasic-informationcontent" placeholder="未选择" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">个人简介</div>
+                                        <textarea id="userbasic-information-intro" class="userbasic-informationcontent"
+                                            placeholder="个人简介" disabled></textarea>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">所在地区</div>
+                                        <input type="text" id="userbasic-information-location"
+                                            class="userbasic-informationcontent" placeholder="未选择" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">地址管理</div>
+                                        <input type="text" id="userbasic-information-address"
+                                            class="userbasic-informationcontent" placeholder="未填写" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">出生日期</div>
+                                        <input type="text" id="userbasic-information-birthdate"
+                                            class="userbasic-informationcontent" placeholder="未填写" disabled>
+                                    </li>
+                                    <li>
+                                        <div class="userbasic-informationname">开始工作</div>
+                                        <input type="text" id="userbasic-information-start-work"
+                                            class="userbasic-informationcontent" placeholder="未填写" disabled>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="usereducation-information">
+                        <div class="usereducation-informationtheme">教育信息</div>
+                        <div class="usereducation-informationcontainer">
+                            <form action="">
+                                <ul class="usereducation-informationcontentlist">
+                                    <li>
+                                        <div class="usereducation-informationname">学校名称</div>
+                                        <div class="usereducation-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="usereducation-informationname">专业</div>
+                                        <div class="usereducation-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="usereducation-informationname">入学时间</div>
+                                        <div class="usereducation-informationcontent">未选择</div>
+                                    </li>
+                                    <li>
+                                        <div class="usereducation-informationname">学历</div>
+                                        <div class="usereducation-informationcontent">未填写</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="userjob-information">
+                        <div class="userjob-informationtheme">工作信息</div>
+                        <div class="userjob-informationcontainer">
+                            <form action="">
+                                <ul class="userjob-informationcontentlist">
+                                    <li>
+                                        <div class="userjob-informationname">公司名称</div>
+                                        <div class="userjob-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userjob-informationname">职位名称</div>
+                                        <div class="userjob-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userjob-informationname">所属行业</div>
+                                        <div class="userjob-informationcontent">未选择</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="userprofileediting-rightcontent2">
+                    <div><img src="./images/风险.jpg" alt=""></div>
+                    <div class="userzhanghao-information">
+                        <div class="userzhanghao-informationtheme">账号设置</div>
+                        <span class="userchangemimainformation">修改密码</span>
+                        <div class="userzhanghao-informationcontainer">
+                            <form action="">
+                                <ul class="userzhanghao-informationcontentlist">
+                                    <li>
+                                        <div class="userzhanghao-informationname">密码</div>
+                                        <div class="userzhanghao-informationcontent">*******</div>
+                                    </li>
+                                    <li>
+                                        <div class="userzhanghao-informationname">手机 ID</div>
+                                        <div class="userzhanghao-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userzhanghao-informationname">邮箱</div>
+                                        <div class="userzhanghao-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userzhanghao-informationname">三方账号</div>
+                                        <div class="userzhanghao-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userzhanghao-informationname">登陆记录</div>
+                                        <div class="userzhanghao-informationcontent">未填写</div>
+                                    </li>
+                                    <li>
+                                        <div class="userzhanghao-informationname">账号注销</div>
+                                        <div class="userzhanghao-informationcontent">未填写</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 信息修改框 -->
+        <div class="usermodal" id="info-usermodal">
+            <div class="usermodal-content">
+                <h3>修改用户信息</h3>
+                <input type="text" id="usermodal-username" placeholder="请输入新的用户名">
+                <input type="text" id="usermodal-avatar" placeholder="请输入新的头像链接">
+                <textarea id="usermodal-intro" placeholder="请输入新的个人简介"></textarea>
+                <button id="submit-info">提交修改</button>
+                <button class="usermodal-close" id="close-usermodal">关闭</button>
+            </div>
+        </div>
+        <!-- 密码修改模态框 -->
+        <div class="usermodalmima" id="password-usermodalmima">
+            <div class="usermodalmima-content">
+                <h3>修改密码</h3>
+                <input type="password" id="usermodalmima-password" placeholder="请输入新的密码">
+                <button id="submit-passwordmima">提交修改</button>
+                <button class="usermodalmima-close" id="close-password-modalmima">关闭</button>
+            </div>
+        </div>
+    </div>
+    <!-- 用户个人主页结束 -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
