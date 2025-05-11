@@ -213,7 +213,7 @@ oTuichudenglu1.addEventListener("click", () => {
     });
 
     xhrtuichudenglu.open("POST", "http://119.29.229.71:8585/cat/user/logout");
-    xhrtuichudenglu.setRequestHeader("token", "HnQnZSFAdz7C5fmdcj9UTpK11mODsfJr6z2Q1RgJiAOIGoYAnMgBPPT3d71a2IoNBSwcfVnlIHUk9q9tYFU5zMJwYHmiMMubLFzfBB31UqkzwDpJstEZSoNZ9RX94UPs");
+    xhrtuichudenglu.setRequestHeader("token", token);
 
     xhrtuichudenglu.send();
 })
@@ -246,7 +246,7 @@ oTuichudenglu2.addEventListener("click", () => {
     });
 
     xhrtuichudenglu.open("POST", "http://119.29.229.71:8585/cat/user/logout");
-    xhrtuichudenglu.setRequestHeader("token", "HnQnZSFAdz7C5fmdcj9UTpK11mODsfJr6z2Q1RgJiAOIGoYAnMgBPPT3d71a2IoNBSwcfVnlIHUk9q9tYFU5zMJwYHmiMMubLFzfBB31UqkzwDpJstEZSoNZ9RX94UPs");
+    xhrtuichudenglu.setRequestHeader("token", token);
 
     xhrtuichudenglu.send();
 })
@@ -279,7 +279,7 @@ oTuichudenglu3.addEventListener("click", () => {
     });
 
     xhrtuichudenglu.open("POST", "http://119.29.229.71:8585/cat/user/logout");
-    xhrtuichudenglu.setRequestHeader("token", "HnQnZSFAdz7C5fmdcj9UTpK11mODsfJr6z2Q1RgJiAOIGoYAnMgBPPT3d71a2IoNBSwcfVnlIHUk9q9tYFU5zMJwYHmiMMubLFzfBB31UqkzwDpJstEZSoNZ9RX94UPs");
+    xhrtuichudenglu.setRequestHeader("token", token);
 
     xhrtuichudenglu.send();
 })
@@ -817,7 +817,7 @@ oLogomonkey.addEventListener("click", () => {
         var myBlogslist = document.getElementById("my-blogslist");
         var xhrmyblogs = new XMLHttpRequest();
         xhrmyblogs.open('GET', 'http://119.29.229.71:8585/cat/article/me?pageSize=10&page=1');
-        xhrmyblogs.setRequestHeader("token", "mzYOZoyZZPaBnjs0CNsEI9Y2GxtBhMmX8TL4wbuHjwwprFydnaFsp4bzauKnxfNH5IPuei6RkvbldZ3mOA9MbTqcYb9firOcEoeciMLP8okPqNtD4Y1U9hEWyoNc2yJ3");
+        xhrmyblogs.setRequestHeader("token", token);
         xhrmyblogs.send();
         xhrmyblogs.onreadystatechange = function () {
             //判断(服务端返回了所有的结果)
